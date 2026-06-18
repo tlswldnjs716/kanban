@@ -3,12 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>칸반보드</title>
+  <title>스티치 칸반보드</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>칸반보드</h1>
 
+  <!-- 배경 버블 -->
+  <div class="bubbles" aria-hidden="true">
+    <div class="bubble" style="--size:60px;  --left:8%;  --dur:9s;  --delay:0s;   --op:0.10"></div>
+    <div class="bubble" style="--size:30px;  --left:20%; --dur:7s;  --delay:1.5s; --op:0.13"></div>
+    <div class="bubble" style="--size:80px;  --left:35%; --dur:11s; --delay:0.5s; --op:0.08"></div>
+    <div class="bubble" style="--size:20px;  --left:50%; --dur:8s;  --delay:3s;   --op:0.15"></div>
+    <div class="bubble" style="--size:50px;  --left:65%; --dur:10s; --delay:1s;   --op:0.10"></div>
+    <div class="bubble" style="--size:35px;  --left:78%; --dur:7s;  --delay:2s;   --op:0.12"></div>
+    <div class="bubble" style="--size:70px;  --left:90%; --dur:12s; --delay:0s;   --op:0.07"></div>
+  </div>
+
+  <!-- 헤더 -->
+  <header>
+    <div class="stitch-face">
+      <img src="stitch.png" alt="스티치" class="stitch-img">
+    </div>
+    <h1 class="title">스티치 칸반보드</h1>
+    <p class="subtitle">오늘도 할 일을 척척 해치워봐요! 🌊</p>
+  </header>
+
+  <!-- 칸반 보드 -->
   <div class="board">
     <section class="column" data-status="todo">
       <header class="column-header column-header--todo">
@@ -18,7 +41,7 @@
       <form class="add-card-form" data-status="todo">
         <label class="visually-hidden" for="todo-input">To-do 카드 추가</label>
         <input type="text" id="todo-input" placeholder="새 카드 추가..." autocomplete="off">
-        <button type="submit">추가</button>
+        <button type="submit">+</button>
       </form>
       <ul class="card-list" data-status="todo"></ul>
     </section>
@@ -31,20 +54,20 @@
       <form class="add-card-form" data-status="inprogress">
         <label class="visually-hidden" for="inprogress-input">In-progress 카드 추가</label>
         <input type="text" id="inprogress-input" placeholder="새 카드 추가..." autocomplete="off">
-        <button type="submit">추가</button>
+        <button type="submit">+</button>
       </form>
       <ul class="card-list" data-status="inprogress"></ul>
     </section>
 
     <section class="column" data-status="done">
       <header class="column-header column-header--done">
-        <h2>Done</h2>
+        <h2>Done ✓</h2>
         <span class="card-count" data-count-for="done">0</span>
       </header>
       <form class="add-card-form" data-status="done">
         <label class="visually-hidden" for="done-input">Done 카드 추가</label>
         <input type="text" id="done-input" placeholder="새 카드 추가..." autocomplete="off">
-        <button type="submit">추가</button>
+        <button type="submit">+</button>
       </form>
       <ul class="card-list" data-status="done"></ul>
     </section>
