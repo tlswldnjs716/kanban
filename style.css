@@ -26,9 +26,13 @@
 }
 
 /* ── Base ──────────────────────────────────────── */
+html {
+  font-size: 18px;
+}
+
 body {
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 30px;
+  font-size: 1.65rem;
   background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
   min-height: 100vh;
   color: var(--text);
