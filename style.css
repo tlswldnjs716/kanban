@@ -1,0 +1,172 @@
+:root {
+  --color-todo: #64748b;
+  --color-inprogress: #f59e0b;
+  --color-done: #16a34a;
+  --color-bg: #f3f4f6;
+  --color-card-bg: #ffffff;
+  --color-text: #1f2937;
+  --color-danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1 {
+  margin: 0 0 20px;
+  font-size: 22px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+.column {
+  flex: 1;
+  min-width: 0;
+  background: #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.column-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 10px;
+  border-radius: 6px;
+  color: #ffffff;
+}
+
+.column-header h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.column-header--todo {
+  background: var(--color-todo);
+}
+
+.column-header--inprogress {
+  background: var(--color-inprogress);
+}
+
+.column-header--done {
+  background: var(--color-done);
+}
+
+.card-count {
+  font-size: 13px;
+  background: rgba(255, 255, 255, 0.3);
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.add-card-form {
+  display: flex;
+  gap: 6px;
+}
+
+.add-card-form input {
+  flex: 1;
+  min-width: 0;
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.add-card-form button {
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  background: #374151;
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-card-form button:hover {
+  background: #1f2937;
+}
+
+.card-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 60px;
+}
+
+.card-list.drag-over {
+  outline: 2px dashed #6b7280;
+  outline-offset: 2px;
+  background: rgba(107, 114, 128, 0.08);
+  border-radius: 6px;
+}
+
+.card {
+  background: var(--color-card-bg);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+  cursor: grab;
+}
+
+.card.dragging {
+  opacity: 0.5;
+}
+
+.card-text {
+  font-size: 14px;
+  word-break: break-word;
+}
+
+.card-delete-btn {
+  flex-shrink: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-danger);
+  font-size: 16px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.card-delete-btn:hover {
+  color: #b91c1c;
+}
+
+@media (max-width: 768px) {
+  .board {
+    flex-direction: column;
+  }
+}
