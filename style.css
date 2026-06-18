@@ -308,6 +308,204 @@ header {
 .card:hover .card-delete-btn { opacity: 1; }
 .card-delete-btn:hover { color: var(--danger); background: #fff0f0; }
 
+/* ── Auth Overlay ──────────────────────────────── */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+  padding: 16px;
+}
+
+.auth-card {
+  background: #fff;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-col);
+  padding: 32px 28px 28px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid rgba(91, 200, 245, 0.25);
+}
+
+.auth-stitch {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(58, 181, 229, 0.35));
+  animation: bounce 2.8s ease-in-out infinite;
+}
+
+.auth-card-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.6rem;
+  color: var(--blue-3);
+  letter-spacing: 0.02em;
+  margin: 0;
+}
+
+.auth-desc {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+#auth-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.auth-input {
+  width: 100%;
+  border: 2px solid #d0eefa;
+  border-radius: 14px;
+  padding: 11px 16px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
+  background: #f5fbff;
+  transition: border-color 0.2s;
+}
+
+.auth-input:focus { border-color: var(--blue-1); background: #fff; }
+.auth-input::placeholder { color: #a0c8df; }
+
+.auth-error {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #ef4444;
+  text-align: center;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 성공 메시지는 파란색 */
+.auth-error:not(:empty):first-letter { }
+.auth-error[style*="color: var(--blue"] { color: var(--blue-3); }
+
+.auth-submit {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--blue-1), var(--blue-3));
+  color: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(58, 181, 229, 0.4);
+  transition: transform 0.15s, box-shadow 0.15s, opacity 0.15s;
+}
+
+.auth-submit:hover  { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(58,181,229,0.5); }
+.auth-submit:active { transform: scale(0.97); }
+.auth-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.auth-switch-text {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin: 0;
+}
+
+.auth-switch-text a {
+  color: var(--blue-3);
+  font-weight: 800;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.auth-switch-text a:hover { text-decoration: underline; }
+
+.auth-divider {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #d0eefa;
+}
+
+.auth-social {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.social-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 11px 16px;
+  border-radius: 14px;
+  border: 2px solid #d0eefa;
+  background: #fff;
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--text);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.social-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+.github-btn:hover { border-color: #333; }
+.google-btn:hover { border-color: #4285F4; }
+
+/* ── User Bar ───────────────────────────────────── */
+.user-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.logout-btn {
+  border: 2px solid rgba(91, 200, 245, 0.4);
+  background: #fff;
+  color: var(--text-muted);
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.18s;
+}
+
+.logout-btn:hover {
+  background: #fff0f0;
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
 /* ── 반응형 ────────────────────────────────────── */
 @media (max-width: 700px) {
   body { padding: 0 12px 48px; }
