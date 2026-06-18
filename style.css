@@ -27,7 +27,8 @@
 
 /* ── Base ──────────────────────────────────────── */
 body {
-  font-family: 'Gaegu', cursive;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 18px;
   background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
   min-height: 100vh;
   color: var(--text);
@@ -188,8 +189,8 @@ header {
   padding: 8px 12px;
   border: 2px solid #d0eefa;
   border-radius: 12px;
-  font-family: 'Gaegu', cursive;
-  font-size: 0.88rem;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
   background: #f5fbff;
@@ -285,7 +286,7 @@ header {
 
 .card-text {
   flex: 1;
-  font-size: 0.9rem;
+  font-size: 1.05rem;
   font-weight: 700;
   color: var(--text);
   word-break: break-word;
@@ -371,7 +372,7 @@ header {
   border: 2px solid #d0eefa;
   border-radius: 14px;
   padding: 11px 16px;
-  font-family: 'Gaegu', cursive;
+  font-family: 'Nanum Pen Script', cursive;
   font-size: 0.95rem;
   color: var(--text);
   outline: none;
@@ -402,7 +403,7 @@ header {
   border-radius: 14px;
   background: linear-gradient(135deg, var(--blue-1), var(--blue-3));
   color: #fff;
-  font-family: 'Gaegu', cursive;
+  font-family: 'Nanum Pen Script', cursive;
   font-size: 1rem;
   font-weight: 800;
   cursor: pointer;
@@ -465,7 +466,7 @@ header {
   border-radius: 14px;
   border: 2px solid #d0eefa;
   background: #fff;
-  font-family: 'Gaegu', cursive;
+  font-family: 'Nanum Pen Script', cursive;
   font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
@@ -492,7 +493,7 @@ header {
   border: 2px solid rgba(91, 200, 245, 0.4);
   background: #fff;
   color: var(--text-muted);
-  font-family: 'Gaegu', cursive;
+  font-family: 'Nanum Pen Script', cursive;
   font-size: 0.78rem;
   font-weight: 700;
   padding: 5px 14px;
