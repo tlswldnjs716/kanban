@@ -28,7 +28,7 @@
 /* ── Base ──────────────────────────────────────── */
 body {
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 18px;
+  font-size: 22px;
   background: linear-gradient(160deg, var(--bg) 0%, var(--bg2) 100%);
   min-height: 100vh;
   color: var(--text);
@@ -159,7 +159,7 @@ header {
 .column-header h2 {
   margin: 0;
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   letter-spacing: 0.03em;
 }
 
@@ -190,7 +190,7 @@ header {
   border: 2px solid #d0eefa;
   border-radius: 12px;
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--text);
   background: #f5fbff;
@@ -286,7 +286,7 @@ header {
 
 .card-text {
   flex: 1;
-  font-size: 1.05rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text);
   word-break: break-word;
