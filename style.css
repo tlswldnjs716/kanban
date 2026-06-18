@@ -508,9 +508,140 @@ header {
   color: #ef4444;
 }
 
+/* ── 활동 로그 ─────────────────────────────────── */
+.log-panel {
+  position: relative;
+  z-index: 1;
+  max-width: 1100px;
+  margin: 24px auto 0;
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+  border: 2px solid rgba(91, 200, 245, 0.2);
+  box-shadow: var(--shadow-col);
+  overflow: hidden;
+}
+
+.log-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 18px;
+  border-bottom: 1.5px solid rgba(91, 200, 245, 0.15);
+}
+
+.log-title {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 1.2rem;
+  color: var(--blue-3);
+  margin: 0;
+}
+
+.log-toggle-btn {
+  border: none;
+  background: transparent;
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 4px 10px;
+  border-radius: 10px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.log-toggle-btn:hover {
+  background: rgba(91, 200, 245, 0.12);
+  color: var(--blue-3);
+}
+
+.log-panel.collapsed .log-list { display: none; }
+.log-panel.collapsed .log-toggle-btn::after { content: ''; }
+
+.log-list {
+  list-style: none;
+  max-height: 240px;
+  overflow-y: auto;
+  padding: 8px 0;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(91, 200, 245, 0.3) transparent;
+}
+
+.log-list::-webkit-scrollbar { width: 5px; }
+.log-list::-webkit-scrollbar-thumb {
+  background: rgba(91, 200, 245, 0.3);
+  border-radius: 99px;
+}
+
+.log-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 7px 18px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text);
+  border-bottom: 1px solid rgba(91, 200, 245, 0.08);
+  animation: slideIn 0.25s ease both;
+}
+
+.log-item:last-child { border-bottom: none; }
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.log-icon { font-size: 0.95rem; flex-shrink: 0; }
+
+.log-actor {
+  color: var(--blue-3);
+  font-weight: 800;
+  flex-shrink: 0;
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.log-desc { flex: 1; color: var(--text); line-height: 1.4; }
+
+.log-desc .log-card-text {
+  font-weight: 800;
+  color: var(--text);
+}
+
+.log-desc .log-status {
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+}
+
+.log-status--todo       { background: var(--todo-bg);       color: var(--todo-color); }
+.log-status--inprogress { background: var(--inprogress-bg); color: var(--inprogress-color); }
+.log-status--done       { background: var(--done-bg);       color: var(--done-color); }
+
+.log-time {
+  flex-shrink: 0;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.log-empty {
+  text-align: center;
+  padding: 20px;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
 /* ── 반응형 ────────────────────────────────────── */
 @media (max-width: 700px) {
   body { padding: 0 12px 48px; }
   .board { flex-direction: column; }
   .stitch-img { width: 88px; height: 88px; }
+  .log-actor { max-width: 100px; }
 }
